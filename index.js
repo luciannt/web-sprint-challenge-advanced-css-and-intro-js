@@ -248,8 +248,9 @@ console.log(artists[8].name);
  3. Return a string in the format `the artist at index {id} is {name}`
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
-function getArtistByIndex(id) {
-  return `the artist at index ${artists[id]} is ${artists[id].name}`;
+function getArtistByIndex(arr, index) {
+  const artist = arr[index];
+  return `the artist at index ${artist.id} is ${artist.name}`;
 }
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -299,9 +300,18 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(arr, id, name, years, genre, nationality, bio) {
-  return arr.push({ id, name, years, genre, nationality, bio });
+function addArtist(arr) {
+  arr.push({
+    id: 20,
+    name: "Lucianna Tittle",
+    years: "2000 - 2021",
+    genre: "Web Design",
+    nationality: "American",
+    bio: "I enjoy learning about web development",
+  });
+  return arr;
 }
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
 1. Receive an array 
