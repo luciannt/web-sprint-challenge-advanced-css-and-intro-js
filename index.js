@@ -249,7 +249,7 @@ console.log(artists[8].name);
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 function getArtistByIndex(id) {
-  return `The artist at index ${artists[id].id} is ${artists[id].name}`;
+  return `the artist at index ${artists[id]} is ${artists[id].name}`;
 }
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -259,11 +259,11 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s() {
-  let bornIn20s = [];
+function get20s(arr) {
+  const bornIn20s = [];
   for (let i = 0; i < artists.length; i++) {
-    if (arr[i].years >= "1900") {
-      bornIn20s.push(arr[i]);
+    if (arr[i].years >= "1900 - 2000") {
+      bornIn20s.push(arr[i].name);
     }
   }
   return bornIn20s;
@@ -299,16 +299,8 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(id, name, years, genre, nationality, bio) {
-  artists.push({
-    id: id,
-    name: name,
-    years: years,
-    genre: genre,
-    nationality: nationality,
-    bio: bio,
-  });
-  return artists;
+function addArtist(arr, id, name, years, genre, nationality, bio) {
+  return arr.push({ id, name, years, genre, nationality, bio });
 }
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -318,10 +310,10 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(arr) {
-  const manyPaintings = [...artists];
+  const manyPaintings = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].paintings > 100) {
-      manyPaintings.push(arr[i]);
+      manyPaintings.push(arr[i].name);
     }
   }
   return manyPaintings;
